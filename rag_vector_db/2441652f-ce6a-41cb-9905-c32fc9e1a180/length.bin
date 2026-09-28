@@ -1,0 +1,3 @@
+PAYMENT METHOD POLICY: Payment method should be retained for payment-behavior analysis. An unknown payment method should be preserved and flagged for data-quality review rather than silently replaced.
+
+LOCATION CONTEXT POLICY: Location may support travel and regional spending analysis. A location mismatch is a review signal only and should not automatically be treated as fraud or a policy violatio

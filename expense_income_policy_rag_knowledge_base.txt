@@ -1,0 +1,53 @@
+EXPENSE INTELLIGENCE SYSTEM - SYNTHETIC EXPENSE AND INCOME POLICY KNOWLEDGE BASE
+
+These synthetic policies are for RAG retrieval and demonstration only. They are not actual employer, government, tax, banking, or legal regulations.
+
+TRAVEL POLICY: Standard domestic business flights are reimbursable up to INR 7000 per one-way trip. Economy class is standard; premium or business class requires prior approval. Domestic business hotels are allowed up to INR 5000 per night. Higher flight or hotel costs require documented business justification and approval.
+
+TRANSPORTATION POLICY: Business-related taxi or ride-hailing expenses are reimbursable up to INR 1000 per trip. Airport transportation may exceed the standard limit when justified by the business itinerary. Fuel and public transportation are eligible only for approved business activity and require reasonable transaction evidence.
+
+FOOD POLICY: A business meal is reimbursable up to INR 1000 per meal and INR 2500 per person per day. Client or business-hosting meals require a legitimate business purpose, attendees, and an itemized receipt. Personal food delivery is not reimbursable.
+
+SHOPPING POLICY: Business purchases must be necessary for approved business activity. Purchases above INR 5000 require approval. Electronics or equipment above INR 10000 require prior approval. Personal clothing, household purchases, groceries, and unrelated shopping are not reimbursable unless connected to an approved business event.
+
+SUBSCRIPTION POLICY: Software, media, or service subscriptions require an approved business purpose. Recurring subscriptions should be reviewed periodically and may be considered non-business without documented need.
+
+ENTERTAINMENT POLICY: Business entertainment requires a legitimate client or partner purpose, attendees, and a receipt. Personal movies, gaming, leisure activities, and unrelated entertainment are not reimbursable. Events above INR 2500 require approval.
+
+HEALTHCARE POLICY: Healthcare and pharmacy expenses are reimbursable only when covered by an applicable health or employee-benefit policy and supported by the required receipt.
+
+UTILITIES POLICY: Electricity, internet, and mobile expenses are eligible only when attributable to approved business use or a defined work arrangement. Ordinary personal household utilities are not automatically reimbursable.
+
+GENERAL REVIEW POLICY: Discretionary expenses above INR 3000 in one day should be reviewed. Monthly discretionary spending above INR 20000 should trigger a spending review. These are review thresholds, not automatic violations.
+
+APPROVAL POLICY: Expenses above INR 5000 should have appropriate approval unless a category-specific rule sets a different threshold. A documented category-specific rule takes precedence over a general rule. Exceptions must have business justification and authorized approval.
+
+RESTRICTED EXPENSE POLICY: Alcohol, luxury purchases, primarily personal expenses, and expenses unrelated to approved business activity are not reimbursable unless an explicitly approved exception applies.
+
+INCOME POLICY: Salary, freelance payments, reimbursements, interest, and other income should be classified separately when possible. Income should have an identifiable source and supporting description. Reimbursements should not automatically be treated as salary or ordinary earnings. Ambiguous income should be flagged for review.
+
+REVIEW POLICY: Repeated expenses, unusual changes in frequency or amount, and potentially unnecessary discretionary spending should be reviewed. An unusual transaction is not automatically invalid. A missing policy match means the policy is not determined from available knowledge.
+
+HOUSING POLICY: Rent and housing payments are personal expenses by default and are not reimbursable as business expenses unless an approved housing or relocation policy applies. A recurring rent payment should be classified consistently and reviewed when its amount changes unexpectedly.
+
+FITNESS POLICY: Gym memberships and fitness expenses are eligible only when covered by an applicable employee-benefit or wellness policy. Personal fitness expenses without documented eligibility should be treated as non-business expenses.
+
+RECURRING EXPENSE POLICY: Recurring rent, subscriptions, mobile recharges, utilities, and memberships should be reviewed periodically for continued necessity, correct amount, and correct category.
+
+DUPLICATE TRANSACTION POLICY: Transactions with the same or highly similar date, merchant, description, payment method, and amount should be flagged as possible duplicates. A possible duplicate requires review and is not automatically invalid.
+
+TRANSACTION EVIDENCE POLICY: A transaction should retain enough information to support review, including transaction ID, date, description, amount, payment method, merchant, and transaction type. Missing or contradictory fields should trigger validation review.
+
+CATEGORY CLASSIFICATION POLICY: Transactions should be categorized using description, merchant, and available context. Food and restaurant transactions belong to Food; rides and fuel belong to Transportation; flights and hotels belong to Travel; bills belong to Utilities; medical purchases belong to Healthcare; and unclear transactions belong to Other.
+
+AMOUNT VALIDATION POLICY: Transaction amounts must be numeric and non-negative. An invalid, missing, or unexpectedly formatted amount should be rejected for cleaning review before analysis.
+
+DATE VALIDATION POLICY: Transaction dates must use a valid calendar date. A query-specific date filter should include only transactions within the requested inclusive date range.
+
+PAYMENT METHOD POLICY: Payment method should be retained for payment-behavior analysis. An unknown payment method should be preserved and flagged for data-quality review rather than silently replaced.
+
+LOCATION CONTEXT POLICY: Location may support travel and regional spending analysis. A location mismatch is a review signal only and should not automatically be treated as fraud or a policy violation.
+
+PERSONAL PURCHASE POLICY: Amazon, clothing, household, grocery, gaming, and entertainment purchases should be evaluated using their actual description and business context. A merchant name alone is not sufficient evidence of business eligibility.
+
+POLICY DECISION GUIDANCE: Retrieved policies provide evidence for eligibility, approval, or review. The Analysis Agent must distinguish allowed, requires review, requires approval, and not determined. It must not label a transaction as a violation when the retrieved policy only specifies a review threshold.
